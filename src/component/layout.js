@@ -12,12 +12,12 @@ const Layout = ({ children }) => {
     <div style={{ margin: `3rem auto`, maxWidth: 650, padding: `0 1rem` }}>
       <header style={{ marginBottom: `1.5rem` }}>
         <Link to="/" style={{ textShadow: `none`, backgroundImage: `none` }}>
-          <h3>My ylog!</h3>
+          <h3>둥고(DungGo) 블로그</h3>
         </Link>
         <ul style={{ listStyle: `none`, float: `right` }}>
-          <ListLink to="/">Home</ListLink>
-          <ListLink to="/about/">about</ListLink>
-          <ListLink to="/contact/">contact</ListLink>
+          <ListLink to="/">홈</ListLink>
+          <ListLink to="/about/">둥고는요</ListLink>
+          <ListLink to="/contact/">컨텍미</ListLink>
         </ul>
       </header>
       {children}

@@ -4,27 +4,30 @@ import { graphql } from "gatsby"
 
 const IndexPage = ({ data }) => (
       <Layout>
-      <h1>hello world</h1>
-      <p>What do I like to do?</p>
-      <h2>Index</h2>
+      <p>하루하루 감사하며 행복한 둥고</p>
+      <h3>포스트 목록</h3>
       {data.allMarkdownRemark.edges.map(post => (
-        <a
-          key={post.node.id}
-          href={post.node.frontmatter.path}>
-          {post.node.frontmatter.title}
-        </a>
+        <div>
+              <a
+                key={post.node.id}
+                href={post.node.frontmatter.path}>
+                  {post.node.frontmatter.title}
+             </a>
+              <p>{post.node.frontmatter.date}</p>
+        </div>
       ))}
       </Layout>
 )
 
 export const pageQuery = graphql`
   query IndexQuery {
-    allMarkdownRemark(limit: 10) {
+    allMarkdownRemark {
       edges {
         node {
           id
           frontmatter {
             title
+            date
             path
           }
         }
